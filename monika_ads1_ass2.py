@@ -17,7 +17,7 @@ print(data.head(5))
 # Display summary statistics
 print(data.describe())
 
-
+#graph1
 plt.figure(figsize=(10, 6))
 plt.bar(data['Year'], data['Gas'], label='Gas')
 plt.bar(data['Year'], data['Liquids'], label='Liquids')
@@ -29,14 +29,14 @@ plt.legend()
 plt.show()
 
 
-
+#graph2
 plt.figure(figsize=(8, 6))
 plt.scatter(data['Production'], data['Flaring'])
 plt.title('Production vs Flaring')
 plt.xlabel('Production')
 plt.ylabel('Flaring')
 plt.show()
-
+#graph 3
 sum_gas_liquids_solids = data[['Gas', 'Liquids', 'Solids']].sum(axis=1)
 plt.figure(figsize=(10, 6))
 plt.bar(data['Year'], sum_gas_liquids_solids)
@@ -44,7 +44,7 @@ plt.title('Sum of Gas, Liquids, and Solids by Year')
 plt.xlabel('Year')
 plt.ylabel('Total Amount')
 plt.show()
-
+#graph4
 plt.figure(figsize=(10, 6))
 plt.stackplot(data['Year'], data['Gas'], data['Liquids'], data['Solids'], labels=['Gas', 'Liquids', 'Solids'])
 plt.title('Stacked Area Chart of Gas, Liquids, and Solids over the Years')
